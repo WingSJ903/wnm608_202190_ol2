@@ -3,72 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EdenGroveStyle Guide</title>
-    <link rel="styleguide" href="styleguide.css">
-    <style>
-        /* Add Montserrat font family */
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
+    <title>EdenGrove Checkout Form</title>
+    <link rel="stylesheet" type="text/css" href="css/styleguide.css">
 </head>
 <body>
-    <header>
-        <h1>EdenGroves Style Guide</h1>
-    </header>
-    <main>
-         <div style="height: 100px;"></div>
-        <section class="colors">
-            <h2>Colors treatment</h2>
-            <div class="color-sample" style="background-color: #778C49;"></div>
-            <div class="color-sample" style="background-color: #BDBF6F;"></div>
-            <div class="color-sample" style="background-color: #D9B589;"></div>
-            <div class="color-sample" style="background-color: #A67C58;"></div>
-            <div class="color-sample" style="background-color: #8C5B49;"></div>
-            <div class="color-sample" style="background-color: #BFB99B;"></div>
-            <div class="color-sample" style="background-color: #40392D;"></div>
-            <div class="color-sample" style="background-color: #4B9EBF;"></div>
-        </section>
-        
-        <div style="height: 100px;"></div>
-        <section class="font-exploration">
-            <h2>Font Exploration</h2>
-            <div class="font-sample" style="font-size: 24pt;">
-                <p>A B C D E F G H I J K L M</p>
-                <p>N O P Q R S T U V W X Y Z</p>
-                <p>a b c d e f g h i j k l m</p>
-                <p>n o p q r s t u v w x y z</p>
-                <p>0 1 2 3 4 5 6 7 8 9</p>
-            </div>
-        </section>
-        
-        <div style="height: 100px;"></div> <!-- Space after font exploration -->
-        <section class="font-sizes">
-            <h2>Font Sizes</h2>
-            <div style="padding-bottom: 32px;">
-                <h3>14pt</h3>
-                <p style="font-size: 14pt;">Hello and welcome to EdenGrove!</p>
-            </div>
-            <div style="padding-bottom: 32px;">
-                <h3>18pt</h3>
-                <p style="font-size: 18pt;">Hello and welcome to EdenGrove!</p>
-            </div>
-            <div style="padding-bottom: 32px;">
-                <h3>24pt</h3>
-                <p style="font-size: 24pt;">Hello and welcome to EdenGrove!</p>
-            </div>
-            <div style="padding-bottom: 32px;">
-                <h3>48pt</h3>
-                <p style="font-size: 48pt;">Hello and welcome to EdenGrove!</p>
-            </div>
-            <div style="padding-bottom: 32px;">
-                <h3>60pt</h3>
-                <p style="font-size: 60pt;">Hello and welcome to EdenGrove!</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 EdenGrove. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <h1 style="padding-bottom: 60px;">EdenGrove Checkout Form</h1>
+        <main>
+            <section class="section">
+                <h2>Payment Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="cardname">Name on Card</label>
+                        <input type="text" id="cardname" name="cardname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="text" id="cardnumber" name="cardnumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expdate">Expiration Date</label>
+                        <input type="text" id="expdate" name="expdate" placeholder="MM/YYYY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" required>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="section">
+                <h2>Checkout Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="USA">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+            
+            <section class="section">
+                <h2>Button Style</h2>
+                <div class="button-options">
+                    <button class="btn-custom">Add to cart</button>
+                    <button class="btn-custom-second">Add to cart</button>
+                    <button class="btn-custom-third">Add to cart</button>
+                </div>
+            </section>
+
+            <!-- Alert Section -->
+            <section class="section">
+                <h2>Alert</h2>
+                <div class="alert-container">
+                    <div class="alert-banner">
+                        <p class="alert-content">Oops! It seems there was an issue with your payment information. Please update your credit card details to complete your order.</p>
+                        <span class="close-btn">X</span>
+                    </div>
+                    <div class="alert-banner alert-banner-second">
+                        <p class="alert-content">Oops! It seems there was an issue with your payment information. Please update your credit card details to complete your order.</p>
+                        <span class="close-btn">X</span>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
 </body>
 </html>
