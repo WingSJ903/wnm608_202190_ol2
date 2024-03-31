@@ -19,7 +19,23 @@ body {
 
 .brand-name {
     font-weight: bold;
+    font-size: 16pt; 
+    color: white; 
 }
+
+.brand-name a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.brand-name a:hover {
+    color: #ffffff; 
+}
+
+.brand-name a:visited {
+    text-decoration: underline; 
+}
+
 
 .nav-links {
     display: flex;
@@ -33,11 +49,13 @@ body {
     display: flex;
     align-items: center;
     height: 80px;
+    font-size: 16pt; 
 }
 
 .nav-links a:hover {
     background-color: #778C49; 
 }
+
 
 .footer {
     background-color: #BDBF6F;

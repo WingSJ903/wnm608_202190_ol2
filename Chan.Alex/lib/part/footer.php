@@ -1,30 +1,9 @@
 <footer class="footer">
-    <section id="navigations" class="section">
-        <h2>Navigations</h2>
-        <nav class="navigation">
-            <div class="brand-name">EdenGrove</div>
-            <div class="nav-links">
-                <div class="search-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search keyword">
-                    </div>
-                </div>
-                <div class="link-container">
-                    <a href="#">Shop</a>
-                    <span class="divider"></span>
-                </div>
-                <div class="link-container">
-                    <a href="#">Cart</a>
-                    <span class="divider"></span>
-                </div>
-                <div class="link-container">
-                    <a href="#">Checkout</a>
-                    <span class="divider"></span>
-                </div>
-                <div class="link-container">
-                    <a href="#">More</a>
-                </div>
-            </div>
-        </nav>
-    </section>
+    <div class="footer-content" style="display: flex; justify-content: space-between; padding: 0 60px;">
+        <p>&copy; 2024 EdenGrove</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
 </footer>
