@@ -1,0 +1,144 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+header, footer {
+    background-color: #778C49;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.toc-container, .section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+}
+
+.toc-container {
+    background-color: #f5f5f5;
+}
+
+.toc-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toc-container ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toc-container ul li a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li button {
+    background-color: #D9534F;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+}
+
+li button:hover {
+    background-color: #C9302C;
+}
+
+.add-user-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.add-user-container:hover {
+    background-color: #e5e5e5;
+}
+
+.add-user-container h2 {
+    margin-top: 0;
+}
+
+.add-user-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-user-container input[type="text"],
+.add-user-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-user-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-user-container button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+}
+
+.footer {
+    background-color: #778C49;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    color: #ffffff; 
+}
