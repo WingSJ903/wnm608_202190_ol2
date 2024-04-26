@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Page</title>
     <link rel="stylesheet" href="styleguide.css">
+    <style>
+        .item-image {
+            max-width: calc(100% - 96px);
+            max-height: calc(100% - 96px); 
+            padding: 48px; 
+            display: block; 
+            margin: auto; 
+        }
+        .new-items {
+            margin-top: 240px; 
+    </style>
 </head>
 <body>
 
@@ -52,6 +63,7 @@
                 echo '<input type="hidden" name="quantity" value="1">';
                 echo '<button type="submit" class="add-to-cart">Add to Cart</button>';
                 echo '</form>';
+
                 echo '<p>Delivery to San Jose: Apr 15th - 22nd</p>';
                 echo '<p>In stock and ready to ship</p>';
                 echo '<p>30 day satisfaction guarantee</p>';
@@ -60,12 +72,12 @@
             }
             ?>
 
-            <!-- New Items Section -->
+
             <div class="new-items">
                 <h2>New Items</h2>
                 <div class="new-items-container">
                     <?php
-                    $random_products = array_rand($products, 8);
+                    $random_products = array_rand($products, 4); 
 
                     foreach ($random_products as $random_index) {
                         echo '<div class="new-item">';

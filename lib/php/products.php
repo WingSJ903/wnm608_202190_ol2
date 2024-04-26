@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <link rel="stylesheet" href="styleguide.css">
+    <style>
+        a {
+            color: #40392D; 
+            text-decoration: none; 
+        }
+
+        a:visited {
+            color: #778C49;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,15 +49,13 @@
                 if ($index < $totalProducts) {
                     $product = $products[$index];
                     echo '<div class="container">';
-                    echo '<a href="item.php?id=' . $product['id'] . '">';
                     echo '<div class="product">';
                     echo '<div class="product-item">';
                     echo '<img src="' . $product['image'] . '" alt="' . $product['title'] . '">';
-                    echo '<h2>' . $product['title'] . '</h2>';
-                    echo '<p>' . $product['price'] . '</p>';
+                    echo '<h2><a href="item.php?id=' . $product['id'] . '">' . $product['title'] . '</a></h2>';
+                    echo '<p>$' . intval(str_replace('$', '', $product['price'])) . '</p>'; 
                     echo '</div>';
                     echo '</div>';
-                    echo '</a>';
                     echo '</div>';
                 }
             }
