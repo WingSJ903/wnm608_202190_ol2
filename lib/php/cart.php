@@ -28,13 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'quantity' => $_POST['quantity']
         ];
         addToCart($product);
-        header('Location: cart.php');
+
+        header('Location: cart.php?added=true');
         exit;
     }
     if (isset($_POST['remove_product_id'])) {
         foreach ($_SESSION['cart'] as $key => $item) {
             if ($item['id'] == $_POST['remove_product_id']) {
                 unset($_SESSION['cart'][$key]);
+
                 header('Location: cart.php');
                 exit;
             }
@@ -83,6 +85,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 14px;
             width: calc(100% - 32px);
         }
+        .success-banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include 'header.php'; ?>
 
 <main>
+
+
     <div class="parent-container">
         <div class="main-container">
             <div class="cart-items-container">

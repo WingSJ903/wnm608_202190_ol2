@@ -14,12 +14,51 @@
             margin: auto; 
         }
         .new-items {
-            margin-top: 240px; 
+            margin-top: 320px; 
+        }
+        .banner {
+            display: none;
+            background-color: #BDBF6F;
+            width: 100%;
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 120px; 
+            left: 0;
+            z-index: 999;
+            padding: 80px 0;
+        }
+        .banner p {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .banner button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #40392D; 
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-left: 10px; 
+            border-radius: 24px; 
+        }
+        .banner button:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
     </style>
 </head>
 <body>
 
 <?php include 'header.php'; ?>
+
+<div class="banner" id="banner">
+    <p style="color: #40392D;">You added an item to the cart</p>
+    <button onclick="continueShopping()" style="border-radius: 24px;">Continue Shopping</button>
+    <button onclick="goToCart()" style="border-radius: 24px;">Go to Cart</button>
+</div>
 
 <main>
     <div class="main-container">
@@ -52,18 +91,18 @@
             }
 
             if ($product) {
+
                 echo '<img src="' . $product['image'] . '" alt="Item Image" class="item-image">';
                 echo '<h2>' . $product['title'] . '</h2>';
                 echo '<p>Price: ' . $product['price'] . '</p>';
-                echo '<form method="post" action="cart.php">';
+                echo '<form id="add-to-cart-form">';
                 echo '<input type="hidden" name="id" value="' . $product['id'] . '">';
                 echo '<input type="hidden" name="title" value="' . $product['title'] . '">';
                 echo '<input type="hidden" name="price" value="' . $product['price'] . '">';
                 echo '<input type="hidden" name="image" value="' . $product['image'] . '">';
                 echo '<input type="hidden" name="quantity" value="1">';
-                echo '<button type="submit" class="add-to-cart">Add to Cart</button>';
+                echo '<button type="button" class="add-to-cart">Add to Cart</button>';
                 echo '</form>';
-
                 echo '<p>Delivery to San Jose: Apr 15th - 22nd</p>';
                 echo '<p>In stock and ready to ship</p>';
                 echo '<p>30 day satisfaction guarantee</p>';
@@ -71,7 +110,6 @@
                 echo '<p>Product not found</p>';
             }
             ?>
-
 
             <div class="new-items">
                 <h2>New Items</h2>
@@ -96,6 +134,30 @@
 </main>
 
 <?php include 'footer.php'; ?>
+
+<script>
+
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+        var formData = new FormData(document.getElementById('add-to-cart-form'));
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'cart.php', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                document.getElementById('banner').style.display = 'block';
+            }
+        };
+        xhr.send(formData);
+    });
+
+
+    function continueShopping() {
+        window.location.href = 'products.php';
+    }
+
+    function goToCart() {
+        window.location.href = 'cart.php';
+    }
+</script>
 
 </body>
 </html>

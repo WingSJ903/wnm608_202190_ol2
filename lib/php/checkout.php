@@ -142,38 +142,44 @@ include 'header.php';
                     ?>
                 </form>
             </div>
-<!-- Right container -->
-<div class="right-container">
-    <!-- Order summary content -->
-    <h2>Order Summary</h2>
-    <?php
-    $shippingCost = 15.00; 
-    if (!empty($_SESSION['cart'])) {
-        $total = 0;
-        foreach ($_SESSION['cart'] as $item) {
-            $total += $item['price'] * $item['quantity'];
-        }
-        $taxRate = 0.08; 
-        $taxAmount = $total * $taxRate;
-        $grandTotal = $total + $shippingCost + $taxAmount;
+            <!-- Right container -->
+            <div class="right-container">
 
-        echo '<p>Price: $' . number_format($total, 2) . '</p>';
-        echo '<p>Shipping: $' . number_format($shippingCost, 2) . '</p>';
-        echo '<p>Tax: $' . number_format($taxAmount, 2) . '</p>';
-        echo '<div class="divider"></div>';
-        echo '<p>Total: $' . number_format($grandTotal, 2) . '</p>';
-    }
-    ?>
-    <!-- Confirm and Pay button -->
-    <form action="confirmation.php" method="post">
-        <button type="submit" name="confirm_payment" class="confirm-pay-button">Confirm and Pay</button>
-    </form>
-</div>
+                <h2>Order Summary</h2>
+                <?php
+                $shippingCost = 15.00; 
+                if (!empty($_SESSION['cart'])) {
+                    $total = 0;
+                    foreach ($_SESSION['cart'] as $item) {
+                        $total += $item['price'] * $item['quantity'];
+                    }
+                    $taxRate = 0.08; 
+                    $taxAmount = $total * $taxRate;
+                    $grandTotal = $total + $shippingCost + $taxAmount;
 
+                    echo '<p>Price: $' . number_format($total, 2) . '</p>';
+                    echo '<p>Shipping: $' . number_format($shippingCost, 2) . '</p>';
+                    echo '<p>Tax: $' . number_format($taxAmount, 2) . '</p>';
+                    echo '<div class="divider"></div>';
+                    echo '<p>Total: $' . number_format($grandTotal, 2) . '</p>';
+                }
+                ?>
+                <!-- Confirm and Pay button -->
+                <form action="confirmation.php" method="post">
+                    <button type="submit" name="confirm_payment" class="confirm-pay-button">Confirm and Pay</button>
+                </form>
+            </div>
         </div>
     </div>
 </main>
 
 <?php include 'footer.php'; ?>
+
+<?php
+
+unset($_SESSION['cart']);
+?>
+
 </body>
 </html>
+

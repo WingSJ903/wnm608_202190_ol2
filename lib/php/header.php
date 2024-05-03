@@ -30,33 +30,18 @@
             text-decoration: none;
         }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
 
-        .search-input {
-            width: 360px;
-            height: 32px;
-            padding: 10px;
-            font-size: 16pt;
-            border: 2px solid #ccc;
-            border-radius: 24px;
-        }
     </style>
 </head>
 <body>
 
 <header>
     <div style="display: flex; justify-content: space-between; align-items: center; padding-left: 80px; padding-right: 80px;">
-        <h1 style="font-size: 24pt;"><a href="index.php" style="color: white; text-decoration: none;">EdenGrove</a></h1>
+        <h1><a href="index.php" style="color: white; text-decoration: none;">EdenGrove</a></h1>
         <nav>
-            <div class="search-bar" style="margin-right: 48px;">
-                <input type="text" class="search-input" placeholder="Search...">
-            </div>
-            <a href="products.php" style="margin-right: 20px; color: white; font-size: 16pt;">Products</a>
-            <a href="cart.php" style="margin-right: 20px; color: white; font-size: 16pt;">Cart</a>
-            <a href="user_list.php" style="margin-right: 20px; color: white; font-size: 16pt;">Admin</a>
+            <a href="products.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Products</a>
+            <a href="cart.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Cart</a>
+            <a href="user_list.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Admin</a>
         </nav>
     </div>
 </header>
