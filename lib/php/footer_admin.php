@@ -14,12 +14,11 @@
             background-color: #778C49;
             color: #ffffff;
             padding: 20px 0;
-            text-align: center;
-            padding-left: 20px; 
+            text-align: left;
+            padding-left: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap; 
         }
 
         footer h1 {
@@ -28,11 +27,11 @@
         }
 
         .subscribe-text {
-            margin-bottom: 16px; 
+            margin-bottom: 5px;
         }
 
         .subscribe-input {
-            width: calc(100% - 120px); 
+            width: 360px;
             padding: 5px;
             border-radius: 5px;
             border: 1px solid #ffffff;
@@ -43,22 +42,9 @@
             background-color: #ffffff;
             color: #778C49;
             border: none;
+            padding-right: 90px;: 
             border-radius: 5px;
             cursor: pointer;
-            margin-left: 10px; 
-        }
-
-
-        @media screen and (max-width: 768px) {
-            footer {
-                flex-direction: column; 
-                align-items: center; 
-            }
-
-            .subscribe-input {
-                width: 100%; 
-                margin-bottom: 16px; 
-            }
         }
     </style>
 </head>
@@ -66,13 +52,7 @@
 
 <footer>
     <h1>&copy; 2024 EdenGrove All Rights Reserved.</h1>
-    <div>
-        <div class="subscribe-text">Get new products and promotions in your inbox</div>
-        <form>
-            <input type="email" class="subscribe-input" placeholder="Your email">
-            <button type="submit" class="subscribe-button">SUBSCRIBE</button>
-        </form>
-    </div>
+
 </footer>
 
 </body>

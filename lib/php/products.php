@@ -8,6 +8,15 @@
 
     <style>
 
+ a {
+            color: #40392D; 
+            text-decoration: none; 
+        }
+
+        a:visited {
+            color: #778C49; 
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -135,7 +144,6 @@
 
 <?php include 'header.php'; ?>
 
-
 <main>
 
     <div class="search-bar">
@@ -147,6 +155,7 @@
 
 
     <div class="quick-filters">
+        <button onclick="filterByCategory('All')">All</button>
         <button onclick="filterByCategory('Table')">Table</button>
         <button onclick="filterByCategory('Chair')">Chair</button>
         <button onclick="filterByCategory('Set')">Set</button>
@@ -160,10 +169,10 @@
                 <option value="price_high_low">Price: High to Low</option>
                 <option value="price_low_high">Price: Low to High</option>
                 <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
             </select>
         </div>
     </div>
-
 
     <div class="product-container">
         <?php
@@ -184,46 +193,56 @@
         );
 
 
-        if (isset($_GET['category'])) {
-            $category = $_GET['category'];
-            $filteredProducts = array_filter($products, function($product) use ($category) {
-                return strpos(strtolower($product['title']), strtolower($category)) !== false;
+        $filteredProducts = $products;
+
+        // Filter products by keyword
+        if (isset($_GET['keyword']) && !empty($_GET['keyword'])) {
+            $keyword = strtolower($_GET['keyword']);
+            $filteredProducts = array_filter($filteredProducts, function($product) use ($keyword) {
+                return strpos(strtolower($product['title']), $keyword) !== false;
             });
-        } else {
-            $filteredProducts = $products;
         }
 
+        // Filter products by category
+        if (isset($_GET['category']) && $_GET['category'] !== 'All') {
+            $category = $_GET['category'];
+            $filteredProducts = array_filter($filteredProducts, function($product) use ($category) {
+                return strpos(strtolower($product['title']), strtolower($category)) !== false;
+            });
+        }
 
+        // Sort products
         if (isset($_GET['sort_by'])) {
             $sort_by = $_GET['sort_by'];
             switch ($sort_by) {
                 case 'popularity':
-
                     shuffle($filteredProducts);
-
                     $filteredProducts = array_slice($filteredProducts, 0, 7);
                     break;
                 case 'price_high_low':
-
                     usort($filteredProducts, function($a, $b) {
                         return $b['price'] - $a['price'];
                     });
                     break;
                 case 'price_low_high':
-
                     usort($filteredProducts, function($a, $b) {
                         return $a['price'] - $b['price'];
                     });
                     break;
                 case 'newest':
-
                     usort($filteredProducts, function($a, $b) {
                         return strtotime($b['date_added']) - strtotime($a['date_added']);
+                    });
+                    break;
+                case 'oldest':
+                    usort($filteredProducts, function($a, $b) {
+                        return strtotime($a['date_added']) - strtotime($b['date_added']);
                     });
                     break;
             }
         }
 
+        // Display filtered and sorted products
         foreach ($filteredProducts as $product) {
             echo '<div class="container">';
             echo '<div class="product">';
@@ -236,16 +255,17 @@
             echo '</div>';
         }
         ?>
-
     </div>
 </main>
 
 <?php include 'footer.php'; ?>
 
 <script>
+
     function filterByCategory(category) {
         window.location.href = 'products.php?category=' + category;
     }
+
 
     function sortProducts() {
         var sortSelect = document.getElementById("sort");
@@ -265,7 +285,6 @@
         }
     };
 </script>
-
 
 </body>
 </html>

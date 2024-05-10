@@ -39,8 +39,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; padding-left: 80px; padding-right: 80px;">
         <h1><a href="index.php" style="color: white; text-decoration: none;">EdenGrove</a></h1>
         <nav>
-            <a href="products.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Products</a>
-            <a href="cart.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Cart</a>
+
             <a href="admin.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Admin</a>
         </nav>
     </div>
