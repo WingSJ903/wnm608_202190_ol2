@@ -42,6 +42,7 @@
             <a href="products.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Products</a>
             <a href="cart.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Cart</a>
             <a href="admin.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">Admin</a>
+            <a href="faq.php" style="color: white; text-decoration: none; font-size: 16pt; margin-right: 20px;">FAQ</a>
         </nav>
     </div>
 </header>
